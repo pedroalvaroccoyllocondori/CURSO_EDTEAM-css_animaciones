@@ -1,12 +1,21 @@
-.caja{
-    width: 500px;
-    height:300px;
-    background-color: red;
-    animation: color 4s infinite alternate;
-}
+@charset "UTF-8";
+.caja {
+  width: 300px;
+  height: 300px;
+  background-color: red;
+  border-radius: 50%;
+  border: 1px solid rebeccapurple; }
 
-@keyframes color{
-    to{
-        background-color:yellow;
-    }
-}
+@keyframes tamaño {
+  to {
+    width: 400px;
+    height: 400px; } }
+
+.caja:nth-of-type(2) {
+  background-color: #360b0b;
+  will-change: transform;
+  animation: escala 1s infinite alternate linear; }
+
+@keyframes escala {
+  to {
+    transform: scale(1.5); } }
