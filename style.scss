@@ -1,29 +1,49 @@
-.caja{
-    width: 300px;
-    height:300px;
-    background-color: red;
-    border-radius: 50%;
-    border: 1px solid rebeccapurple;
-}
-.caja:first-child{
-   // animation: tamaño 4s infinite alternate;
-    @keyframes tamaño{
+//elementos inline no se pueden transformar
+p{
+    background-color: yellow;
+    padding: 1em;
+    transition: all 1s;
+    .animate &:nth-of-type(1){
+        text-align: right;
+    }
+
+    span{
+        position: relative;
+        left: 0;
+        transition: all .5s;
+        .animate &{
+            left: calc(100% - 1rem);
+        }
+    }
     
-        to{
-            width: 400px;
-            height:400px;
+    strong{
+        display: inline-block;
+        transition: all .5s;
+        .animate &{
+            transform: translateX(calc(100vw - 100% - 3em));
         }
     }
 }
-.caja:nth-of-type(2){
-    background-color: rgb(54, 11, 11);
-    will-change: transform;
-    animation: escala 1s infinite alternate linear;
-    @keyframes escala{
-        to{
-            transform: scale(1.5);
-        }
-    }
+
+.flex{
+    display: flex;
+    background:lime;
+    padding:1rem;
+    justify-content:space-between;
+}
+
+.item{
+        color: red;
+        padding:2rem 4rem;
+        border: 1px solid currentColor;
+         &:first-child{
+             background:white;
+             order:0;
+         }
+}
+
+.animate .item:first-child{
+        order:5;
 }
 
 
