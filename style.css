@@ -1,34 +1,32 @@
-p {
-  background-color: yellow;
-  padding: 1em;
-  transition: all 1s; }
-  .animate p:nth-of-type(1) {
-    text-align: right; }
-  p span {
-    position: relative;
-    left: 0;
-    transition: all .5s; }
-    .animate p span {
-      left: calc(100% - 1rem); }
-  p strong {
-    display: inline-block;
-    transition: all .5s; }
-    .animate p strong {
-      transform: translateX(calc(100vw - 100% - 3em)); }
+.menu, .submenu {
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0; }
 
-.flex {
-  display: flex;
-  background: lime;
-  padding: 1rem;
-  justify-content: space-between; }
+.menu {
+  display: flex; }
 
-.item {
-  color: red;
-  padding: 2rem 4rem;
-  border: 1px solid currentColor; }
-  .item:first-child {
-    background: white;
-    order: 0; }
+.submenu {
+  position: absolute;
+  transform-origin: top center;
+  transform: scale(1, 0);
+  transition: transform .2s; }
+  .submenu ul {
+    top: 0;
+    left: 100%; }
 
-.animate .item:first-child {
-  order: 5; }
+[class^="menu-item"] {
+  background-color: gray;
+  position: relative; }
+  [class^="menu-item"]:hover {
+    background-color: rebeccapurple; }
+    [class^="menu-item"]:hover > .submenu {
+      transform: scale(1, 1); }
+
+[class^="menu-link"] {
+  display: block;
+  text-decoration: none;
+  padding: 1.5em 1em;
+  color: wheat;
+  white-space: nowrap; }
