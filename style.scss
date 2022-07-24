@@ -1,49 +1,54 @@
 //ejercicio
+////////////////////////////////////////////////////////////////
+/// propiedades de transition
+/// transtion-timing-funtion--->indica la aceleracion  |DEFECTO EASE
 
-.menu,.submenu{
-    list-style: none;
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-left: 0;
+//ease->desaceleracional
+// lineal->lineal
+// ease-in-->desacelera inicio
+// ease-out-->desacelera al finally
+// ease-in-out-->desacelera final inicio
+
+
+/// transition-delay -->esperar la transion   |DEFECTO 0S
+
+
+// NOTA :TRANSITION  PROPERTY DEFECTO ES ALL
+
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    min-height: 100vh;
 }
 
-.menu{
-    display: flex;
+.transicion{
+    color :red;
+    background-color: yellow;
+    position: relative;
+    transition-property: color , background-color ,transform, left;
+    transition-duration:2s,2s,2s,2s;
+    transition-delay: 2s,2s,0s,2s;
+    transition-timing-function: ease;        //curva de aceleracion 
+    padding: 1rem;
+
     
 }
 
-.submenu{
-    position: absolute;
-    transform-origin: top center;
-    transform: scale(1,0);
-    transition: transform .2s;
-    ul{
-        top: 0;
-        left: 100%;
+div{
 
-    }
+    
+hover .transicion{
+    
+    color: rebeccapurple;
+    background-color:aqua;
+    transform: translateY(-20%);
+    left: -1000%;
+
+
 }
-
-
-[class^="menu-item"]{
-    background-color: gray;
-    position: relative;
-
-    &:hover{
-        background-color:rebeccapurple;
-
-        >.submenu{
-            transform: scale(1,1);
-        }
-    }
 
 }
 
 
-[class^="menu-link"]{
-    display: block;
-    text-decoration: none;
-    padding: 1.5em 1em;
-    color:wheat;
-    white-space: nowrap;
-}
