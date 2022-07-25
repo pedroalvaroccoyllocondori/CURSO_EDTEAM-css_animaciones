@@ -1,54 +1,35 @@
-//ejercicio
-////////////////////////////////////////////////////////////////
-/// propiedades de transition
-/// transtion-timing-funtion--->indica la aceleracion  |DEFECTO EASE
+//EJERCIO DE TRANSICIONES
 
-//ease->desaceleracional
-// lineal->lineal
-// ease-in-->desacelera inicio
-// ease-out-->desacelera al finally
-// ease-in-out-->desacelera final inicio
-
-
-/// transition-delay -->esperar la transion   |DEFECTO 0S
-
-
-// NOTA :TRANSITION  PROPERTY DEFECTO ES ALL
+.pelota{
+    width: 5rem;
+    height: 5rem;
+    background-color: peru;
+    border-radius:50%;
+    position: absolute;
+    left:0;
+    top: 0;
+    transition: left .5s,
+                top  .5s .5s ;
+    .animar &{
+        left:calc(100vw - 5rem);
+        top:calc(100vh - 5rem);
+    }
+    
+}
 
 
 body{
-    display:flex;
-    justify-content:center;
-    align-items: center;
+
     min-height: 100vh;
-}
-
-.transicion{
-    color :red;
-    background-color: yellow;
-    position: relative;
-    transition-property: color , background-color ,transform, left;
-    transition-duration:2s,2s,2s,2s;
-    transition-delay: 2s,2s,0s,2s;
-    transition-timing-function: ease;        //curva de aceleracion 
-    padding: 1rem;
-
+    // min-width: 100vw;
+    display: flex;
     
 }
 
-div{
-
-    
-hover .transicion{
-    
-    color: rebeccapurple;
-    background-color:aqua;
-    transform: translateY(-20%);
-    left: -1000%;
-
-
+#boton{
+    margin: auto;
+    //background-color: red;
 }
 
-}
 
 
