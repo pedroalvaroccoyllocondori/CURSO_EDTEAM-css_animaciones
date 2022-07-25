@@ -1,21 +1,28 @@
-.pelota {
-  width: 5rem;
-  height: 5rem;
+a {
   background-color: peru;
-  border-radius: 50%;
+  text-decoration: none;
+  display: inline-block;
+  padding: .5em 1em;
+  margin: auto;
+  transition: transform 1s; }
+  a:active {
+    transform: scale(0.9); }
+
+h1 {
+  margin-top: 100em;
+  margin-bottom: 20em;
   position: absolute;
-  left: 0;
+  background: rgba(0, 0, 255, 0.49);
+  width: 100%;
+  height: 100%;
+  margin: 0;
   top: 0;
-  transition: left .5s, background-color .5s, top  .5s .5s; }
-  .animar .pelota {
-    transition: left 2s, background-color 2s , top  2s 2s;
-    left: calc(100vw - 5rem);
-    top: calc(100vh - 5rem);
-    background-color: red; }
-
-body {
-  min-height: 100vh;
-  display: flex; }
-
-#boton {
-  margin: auto; }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transform: translateX(-100%);
+  transition: color 1s 1s , transform 1s; }
+  h1:target {
+    color: yellowgreen;
+    transform: translateX(0); }
