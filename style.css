@@ -6,10 +6,12 @@
   position: absolute;
   left: 0;
   top: 0;
-  transition: left .5s, top  .5s .5s; }
+  transition: left .5s, background-color .5s, top  .5s .5s; }
   .animar .pelota {
+    transition: left 2s, background-color 2s , top  2s 2s;
     left: calc(100vw - 5rem);
-    top: calc(100vh - 5rem); }
+    top: calc(100vh - 5rem);
+    background-color: red; }
 
 body {
   min-height: 100vh;
