@@ -1,28 +1,19 @@
-a {
-  background-color: peru;
-  text-decoration: none;
-  display: inline-block;
-  padding: .5em 1em;
-  margin: auto;
-  transition: transform 1s; }
-  a:active {
-    transform: scale(0.9); }
+form {
+  margin: 2rem; }
 
-h1 {
-  margin-top: 100em;
-  margin-bottom: 20em;
-  position: absolute;
-  background: rgba(0, 0, 255, 0.49);
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  transform: translateX(-100%);
-  transition: color 1s 1s , transform 1s; }
-  h1:target {
-    color: yellowgreen;
-    transform: translateX(0); }
+input {
+  background-color: #c9c8c8;
+  transition: background-color .5s; }
+  input:focus {
+    box-shadow: none;
+    outline: none;
+    background-color: #c9c8c8; }
+    input:focus:valid {
+      background-color: #004717; }
+    input:focus:invalid {
+      background-color: #821b1b; }
+    input:focus:out-of-range {
+      background-color: #0d0d44; }
+      input:focus:out-of-range +
+label::after {
+        content: "es menor de 18"; }

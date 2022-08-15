@@ -1,50 +1,40 @@
-//TRIGES CON SPREUDOCLASES
-// body{
 
-//     min-height: 100vh;
-//     display: flex;
-    
-// }
+form{
+    margin: 2rem;
+  }
+  
+  input{
+    background-color:rgb(201, 200, 200);
+    transition: background-color .5s;
+    &:focus{
+        box-shadow: none;
+        outline: none;
+        background-color:rgb(201, 200, 200);
+        &:valid{
 
+            background-color: rgb(0, 71, 23);
+        }
+        &:invalid{
 
-a{
-    background-color: peru;
-   // color: red;
-    text-decoration: none;
-    display: inline-block;
-    padding:.5em 1em;
-    margin: auto;
-    transition: transform 1s;
-
-    &:active{
-        transform: scale(0.9);
-    }
-}
-
-
-h1{
-    margin-top:100em;
-    margin-bottom:20em;
-    position:absolute;
-    background: rgba(0, 0, 255, 0.49);
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    transform:translateX(-100%);
-    transition: color 1s 1s ,
-                transform 1s;
-
-    &:target{
-        color: yellowgreen;
-        transform:translateX(0);
-
+            background-color: rgb(130, 27, 27);
+        }
+        &:out-of-range{
+            background-color:rgb(13, 13, 68);
+            +
+            label{
+                &::after {
+                    content: "es menor de 18";
+                  }
+              }
+              
+        
+        }
+        
 
     }
-}
+  }
+
+
+
 
 
