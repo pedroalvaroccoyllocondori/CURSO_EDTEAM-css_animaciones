@@ -1,40 +1,82 @@
+html{
+    box-sizing: border-box;
+}
 
-form{
-    margin: 2rem;
-  }
-  
-  input{
-    background-color:rgb(201, 200, 200);
-    transition: background-color .5s;
-    &:focus{
-        box-shadow: none;
-        outline: none;
-        background-color:rgb(201, 200, 200);
-        &:valid{
+*,*::after,*::before{
+    box-sizing:inherit
+}
 
-            background-color: rgb(0, 71, 23);
-        }
-        &:invalid{
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
 
-            background-color: rgb(130, 27, 27);
-        }
-        &:out-of-range{
-            background-color:rgb(13, 13, 68);
-            +
-            label{
-                &::after {
-                    content: "es menor de 18";
-                  }
-              }
-              
-        
-        }
-        
+.cart{
+    width: 15rem;
+    height:20rem;
+    position: relative;
+    overflow: hidden;
+    transition: all .3s;
+
+    &__imagen{
+        width: 100%;
+        height: 100%;
+        display:block;
+        transition: transform .2s;
+    }
+
+    &__contenido{
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 1rem;
+        height: 100%;
+        width: 100%;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        transform: translate(0,100%) ;
+        transition:transform .2s ;
+        z-index: 100;
 
     }
-  }
+
+    &::after{
+        content: "";
+        position: absolute;
+        height: 0;
+        width: 100%;
+        left: 0;
+        padding-bottom: 100%;
+         background:linear-gradient(hsla(340,80,60,.8),hsla(200, 80, 60, 0.8) );
+
+        border-radius:50%;
+        bottom: 0;
+        transform: translate(-50%,50%) scale(0.01);
+        transition: inherit;
+
+    }
 
 
 
+    &:hover{
+        .cart__contenido {
+            transform: translate(0);
+            transition:transform .2s .3s;
+        }
+        .cart__imagen{
+            transform: scale(1.2) rotate(10deg);
+            transition: transform .2s .3s;
+        }
 
+        &::after{
+            transform: scale(2.5) ;
+        }
+    }
+}
 
+ 

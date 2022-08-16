@@ -1,19 +1,58 @@
-form {
-  margin: 2rem; }
+html {
+  box-sizing: border-box; }
 
-input {
-  background-color: #c9c8c8;
-  transition: background-color .5s; }
-  input:focus {
-    box-shadow: none;
-    outline: none;
-    background-color: #c9c8c8; }
-    input:focus:valid {
-      background-color: #004717; }
-    input:focus:invalid {
-      background-color: #821b1b; }
-    input:focus:out-of-range {
-      background-color: #0d0d44; }
-      input:focus:out-of-range +
-label::after {
-        content: "es menor de 18"; }
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; }
+
+.cart {
+  width: 15rem;
+  height: 20rem;
+  position: relative;
+  overflow: hidden;
+  transition: all .3s; }
+  .cart__imagen {
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: transform .2s; }
+  .cart__contenido {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    height: 100%;
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    transform: translate(0, 100%);
+    transition: transform .2s;
+    z-index: 100; }
+  .cart::after {
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 100%;
+    left: 0;
+    padding-bottom: 100%;
+    background: linear-gradient(rgba(235, 71, 126, 0.8), rgba(71, 180, 235, 0.8));
+    border-radius: 50%;
+    bottom: 0;
+    transform: translate(-50%, 50%) scale(0.01);
+    transition: inherit; }
+  .cart:hover .cart__contenido {
+    transform: translate(0);
+    transition: transform .2s .3s; }
+  .cart:hover .cart__imagen {
+    transform: scale(1.2) rotate(10deg);
+    transition: transform .2s .3s; }
+  .cart:hover::after {
+    transform: scale(2.5); }
